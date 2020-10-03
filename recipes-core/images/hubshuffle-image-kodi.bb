@@ -58,7 +58,6 @@ IMAGE_INSTALL += "networkmanager networkmanager-bash-completion networkmanager-n
 
 # Install kodi
 IMAGE_INSTALL += "kodi \
-omxplayer \
 libavcodec \
 libavfilter \
 libavformat \
