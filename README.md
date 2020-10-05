@@ -1,4 +1,4 @@
-This README file contains information on the contents of meta-hubshuffle layer.
+This README file contains information on the contents of meta-mentos layer.
 
 Please see the corresponding sections below for details.
 
@@ -11,9 +11,9 @@ Dependencies
 
 Configuration
 ============
- * Add your NetworkManager connection profiles under meta-hubshuffle/recipes-networking/networkmanager/files/*.nmconnection and add those files to the SRC_URI variable in networkmanager_%.bbappend.
- * The root password is defined in meta-hubshuffle/recipes-core/images/hubshuffle-image-kodi.bb
- * The hubshuffle user password is configured in meta-hubshuffle/recipes-core/hubshuffle-user/hubshuffle-user.bb
+ * Add your NetworkManager connection profiles under meta-mentos/recipes-networking/networkmanager/files/*.nmconnection and add those files to the SRC_URI variable in networkmanager_%.bbappend.
+ * The root password is defined in meta-mentos/recipes-core/images/mentos-image-kodi.bb
+ * The mentos user password is configured in meta-mentos/recipes-core/mentos-user/mentos-user.bb
 
 Issues
 ============
@@ -33,7 +33,7 @@ Setup *conf/local.conf*, for example:
 MACHINE = "raspberrypi3-custom"
 DL_DIR = "/opt/yocto/cache/downloads"
 SSTATE_DIR = "/opt/yocto/cache/sstate"
-DISTRO = "hubshuffle"
+DISTRO = "mentos"
 PACKAGE_CLASSES ?= "package_rpm"
 EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
 USER_CLASSES ?= "buildstats image-mklibs image-prelink"
@@ -68,20 +68,20 @@ BBLAYERS ?= " \
   /opt/yocto/workspace/sources/meta-openembedded/meta-filesystems \
   /opt/yocto/workspace/sources/meta-raspberrypi \
   /opt/yocto/workspace/sources/meta-kodi \
-  /opt/yocto/workspace/sources/meta-hubshuffle \
+  /opt/yocto/workspace/sources/meta-mentos \
   "
 
 ```
 
 Build the image:
 ```bash
-bitbake hubshuffle-image-kodi
+bitbake mentos-image-kodi
 ```
 
 Write the image to an sd card:
 ```bash
 OUT_DEV=<sd card drive name>
-sudo dd if=./tmp/deploy/images/raspberrypi3-custom/hubshuffle-image-kodi-raspberrypi3-custom.rpi-sdimg of=/dev/${OUT_DEV} status=progress 
+sudo dd if=./tmp/deploy/images/raspberrypi3-custom/mentos-image-kodi-raspberrypi3-custom.rpi-sdimg of=/dev/${OUT_DEV} status=progress
 ```
 
 ToDo

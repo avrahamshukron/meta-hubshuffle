@@ -1,8 +1,8 @@
 do_install_append () {
-  # Allow sudo for hubshuffle user
-  echo "hubshuffle ALL=(ALL) ALL" > ${D}${sysconfdir}/sudoers.d/hubshuffle
+  # Allow sudo for mentos user
+  echo "mentos ALL=(ALL) ALL" > ${D}${sysconfdir}/sudoers.d/mentos
 }
 
 FILES_${PN} += " \
-  ${sysconfdir}/sudoers.d/hubshuffle \
+  ${sysconfdir}/sudoers.d/mentos \
 "

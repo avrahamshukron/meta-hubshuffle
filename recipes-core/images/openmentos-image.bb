@@ -4,14 +4,8 @@ include recipes-core/images/core-image-base.bb
 # Only allow for machines which start with "rpi"
 COMPATIBLE_MACHINE = "^rpi$"
 
-# User configuration
-inherit extrausers
-EXTRA_USERS_PARAMS = "\
-usermod -p \\\$1\\\$8uiksjhr\\\$dGcSUTCMLX0Tl1Benl3SX. root \
-"
-
 IMAGE_INSTALL += "\
-hubshuffle-user \
+openmentos-user \
 sudo \
 "
 
@@ -54,7 +48,10 @@ IMAGE_INSTALL += "linux-firmware-bcm43430"
 IMAGE_INSTALL += "nfs-utils"
 
 # Add Network Manager
-IMAGE_INSTALL += "networkmanager networkmanager-bash-completion networkmanager-nmtui"
+IMAGE_INSTALL += "\
+networkmanager \
+networkmanager-bash-completion \
+networkmanager-nmtui"
 
 # Install kodi
 IMAGE_INSTALL += "kodi \

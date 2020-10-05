@@ -1,0 +1,9 @@
+[Unit]
+Description=OpenMentOS - Fix user permissions
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/openmentos-fix-user-permissions.sh
+
+[Install]
+WantedBy=multi-user.target

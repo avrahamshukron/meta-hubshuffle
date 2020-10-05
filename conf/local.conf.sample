@@ -1,0 +1,30 @@
+# Sample Local configuration for openmentos images
+# Yocto Project 3.1 Poky distribution [dunfell] branch
+
+DISTRO = "openmentos"
+MACHINE = "raspberrypi3-custom"
+
+# Choose the board you are building for
+#MACHINE = "raspberrypi"
+#MACHINE = "raspberrypi0"
+#MACHINE = "raspberrypi0-wifi"
+#MACHINE = "raspberrypi2"
+#MACHINE = "raspberrypi3"
+#MACHINE = "raspberrypi4"
+#MACHINE = "raspberrypi-cm"
+#MACHINE = "raspberrypi-cm3"
+
+PACKAGE_CLASSES = "package_ipk"
+
+# For a root passwd, change 'openmentos' below to your password
+INHERIT += "extrausers"
+EXTRA_USERS_PARAMS = "usermod -P openmentos root; "
+
+# Force root to change password on first login
+#INHERIT += "chageusers"
+#CHAGE_USERS_PARAMS = "chage -d0 root; "
+
+USER_CLASSES = "image-mklibs image-prelink"
+RM_OLD_IMAGE = "1"
+INHERIT += "rm_work"
+CONF_VERSION = "1"

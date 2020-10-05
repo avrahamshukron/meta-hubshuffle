@@ -2,7 +2,7 @@
 Description=Kodi media thing
 
 [Service]
-User=hubshuffle
+User=mentos
 Type=simple
 SuccessExitStatus=0 1
 IOSchedulingClass=realtime
