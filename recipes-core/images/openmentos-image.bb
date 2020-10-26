@@ -1,66 +1,58 @@
 # Base this image on core-image-base
-include recipes-core/images/core-image-base.bb
+require recipes-core/images/core-image-base.bb
 
-# Only allow for machines which start with "rpi"
-COMPATIBLE_MACHINE = "^rpi$"
-
-IMAGE_INSTALL += "\
-openmentos-user \
-sudo \
+IMAGE_INSTALL_append = " \
+	openmentos-user \
+	sudo \
 "
 
 # Permissions
-IMAGE_INSTALL += "\
-udev-rules \
+IMAGE_INSTALL_append = " \
+	udev-rules \
 "
 
 # Other useful features
-IMAGE_FEATURES += "\
-nfs-server \
-"
+IMAGE_FEATURES += "nfs-server"
 
-IMAGE_INSTALL += "\
-rsync \
-samba \
-ntfs-3g-ntfsprogs \
-fuse-exfat \
+IMAGE_INSTALL_append = " \
+	rsync \
+	samba \
+	ntfs-3g-ntfsprogs \
+	fuse-exfat \
 "
 
 # Configure timezone
-IMAGE_INSTALL += "tzdata-europe tzdata"
+IMAGE_INSTALL_append = " \
+	tzdata-europe \
+	tzdata \
+"
 
-# Only produce the "rpi-sdimg" image format
-IMAGE_FSTYPES = "rpi-sdimg"
-# Remove old builds
-RM_OLD_IMAGE = "1"
+# Generate "rpi-sdimg" image format for rpi machines
+IMAGE_FSTYPES_rpi += "rpi-sdimg"
 
-# Customize the splash screen or disable
-SPLASH = "psplash-raspberrypi"
+# Enable splash screen
 IMAGE_FEATURES += "splash"
 
 # Add ssh
-IMAGE_FEATURES += " ssh-server-dropbear"
-
-# Add support for wifi and bluetooth
-IMAGE_INSTALL += "linux-firmware-bcm43430"
+IMAGE_FEATURES += "ssh-server-dropbear"
 
 # Add mount.nfs
-IMAGE_INSTALL += "nfs-utils"
+IMAGE_INSTALL_append = " nfs-utils"
 
 # Add Network Manager
-IMAGE_INSTALL += "\
-networkmanager \
-networkmanager-bash-completion \
-networkmanager-nmtui"
-
-# Install kodi
-IMAGE_INSTALL += "kodi \
-libavcodec \
-libavfilter \
-libavformat \
-libavutil \
-libswscale \
-libswresample \
+IMAGE_INSTALL_append = " \
+	networkmanager \
+	networkmanager-bash-completion \
+	networkmanager-nmtui \
 "
 
-ENABLE_BINARY_LOCALE_GENERATION = "1"
+# Install kodi
+IMAGE_INSTALL_append = " \
+	kodi \
+	libavcodec \
+	libavfilter \
+	libavformat \
+	libavutil \
+	libswscale \
+	libswresample \
+"
