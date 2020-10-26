@@ -6,19 +6,19 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${BBPATH}/poky/meta \
-    ${BBPATH}/poky/meta-poky \
-    ${BBPATH}/meta-openembedded/meta-oe \
-    ${BBPATH}/meta-openembedded/meta-multimedia \
-    ${BBPATH}/meta-openembedded/meta-networking \
-    ${BBPATH}/meta-openembedded/meta-perl \
-    ${BBPATH}/meta-openembedded/meta-python \
-    ${BBPATH}/meta-openembedded/meta-filesystems \
-    ${BBPATH}/meta-raspberrypi \
-    ${BBPATH}/meta-rpi \
-    ${BBPATH}/meta-security \
-    ${BBPATH}/meta-kodi \
-    ${BBPATH}/meta-jumpnow \
-    ${BBPATH}/meta-ptx \
-    ${BBPATH}/meta-openmentos \
+    ##OEROOT##/meta \
+    ##OEROOT##/meta-poky \
+    ##OEROOT##/../meta-openembedded/meta-oe \
+    ##OEROOT##/../meta-openembedded/meta-multimedia \
+    ##OEROOT##/../meta-openembedded/meta-networking \
+    ##OEROOT##/../meta-openembedded/meta-perl \
+    ##OEROOT##/../meta-openembedded/meta-python \
+    ##OEROOT##/../meta-openembedded/meta-filesystems \
+    ##OEROOT##/../meta-raspberrypi \
+    ##OEROOT##/../meta-rpi \
+    ##OEROOT##/../meta-security \
+    ##OEROOT##/../meta-kodi \
+    ##OEROOT##/../meta-jumpnow \
+    ##OEROOT##/../meta-ptx \
+    ##OEROOT##/../meta-openmentos \
 "
