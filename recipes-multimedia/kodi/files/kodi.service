@@ -2,13 +2,20 @@
 Description=Kodi media thing
 
 [Service]
+
+Environment=__GL_YIELD=USLEEP
+Environment=DISPLAY=:0.0
+Environment=WAYLAND_DISPLAY=wayland-0
+Environment=SDL_MOUSE_RELATIVE=0
+
 User=mentos
 Type=simple
 SuccessExitStatus=0 1
+
 IOSchedulingClass=realtime
 IOSchedulingPriority=0
 
-ExecStart=/usr/bin/kodi
+ExecStart=/usr/bin/kodi-standalone
 
 [Install]
 WantedBy=basic.target
