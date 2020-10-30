@@ -15,7 +15,6 @@ BBLAYERS ?= " \
     ##OEROOT##/../meta-openembedded/meta-python \
     ##OEROOT##/../meta-openembedded/meta-filesystems \
     ##OEROOT##/../meta-raspberrypi \
-    ##OEROOT##/../meta-rpi \
     ##OEROOT##/../meta-security \
     ##OEROOT##/../meta-kodi \
     ##OEROOT##/../meta-jumpnow \
