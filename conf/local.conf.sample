@@ -15,6 +15,12 @@ MACHINE = "raspberrypi3-custom"
 #MACHINE = "raspberrypi-cm3"
 
 #
+# WiFi Settings:
+#
+#OPENMENTOS_WIFI_SSID = "Your Wifi SSID"
+#OPENMENTOS_WIFI_PSK = "Your WPA-PSK (Password)"
+
+#
 # Where to place downloads
 #
 # During a first build the system will download many different source code tarballs

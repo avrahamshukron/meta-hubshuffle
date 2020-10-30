@@ -1,12 +1,10 @@
 [connection]
 id=Home Wi-Fi
-uuid=307589c6-279d-41c4-bb64-5ef7b918e0e5
 type=wifi
 interface-name=wlan0
 permissions=
 
 [wifi]
-mac-address-blacklist=
 mode=infrastructure
 ssid=@@OPENMENTOS_WIFI_SSID@@
 
@@ -23,5 +21,3 @@ method=auto
 addr-gen-mode=stable-privacy
 dns-search=
 method=auto
-
-[proxy]
