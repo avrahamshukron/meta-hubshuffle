@@ -34,16 +34,17 @@ IMAGE_FSTYPES_rpi += "rpi-sdimg"
 IMAGE_FEATURES += "splash"
 
 # Add ssh
-IMAGE_FEATURES += "ssh-server-dropbear"
+IMAGE_FEATURES += "ssh-server-openssh"
 
 # Add mount.nfs
 IMAGE_INSTALL_append = " nfs-utils"
 
-# Add Network Manager
+# Networking
 IMAGE_INSTALL_append = " \
 	networkmanager \
 	networkmanager-bash-completion \
 	networkmanager-nmtui \
+	tcpdump \
 "
 
 # Install kodi
