@@ -17,8 +17,13 @@ MACHINE = "raspberrypi3-custom"
 #
 # WiFi Settings:
 #
-#OPENMENTOS_WIFI_SSID = "Your Wifi SSID"
-#OPENMENTOS_WIFI_PSK = "Your WPA-PSK (Password)"
+#OPENMENTOS_WIFI_HOME_SSID = "Your Home Wifi SSID"
+#OPENMENTOS_WIFI_HOME_PSK = "Your Home WiFi WPA-PSK (Password)"
+
+# WiFi Access Point Settings
+# If supplied, the board will act as an Access Point with the specified details.
+#OPENMENTOS_WIFI_AP_SSID = "Desired SSID"
+#OPENMENTOS_WIFI_AP_PSK = "Desired WPA-PSK (Password)"
 
 #
 # Where to place downloads

@@ -1,17 +1,18 @@
 [connection]
 id=Home Wi-Fi
 type=wifi
+autoconnect=true
 interface-name=wlan0
 permissions=
 
 [wifi]
 mode=infrastructure
-ssid=@@OPENMENTOS_WIFI_SSID@@
+ssid=@@OPENMENTOS_WIFI_HOME_SSID@@
 
 [wifi-security]
 auth-alg=open
 key-mgmt=wpa-psk
-psk=@@OPENMENTOS_WIFI_PSK@@
+psk=@@OPENMENTOS_WIFI_HOME_PSK@@
 
 [ipv4]
 dns-search=
